@@ -14,14 +14,10 @@ import javax.swing.JPanel;
 public class GamePlay extends JPanel implements KeyListener, ActionListener  {
 	private boolean play = false;
 	private int score = 0;
-	
 	private int totalBricks = 21;
-	
 	private Timer timer;
 	private int delay = 8;
-	
 	private int playerX = 310;
-	
 	private int ballposX = 120;
 	private int ballposY = 350;
 	private int ballXdir = -1;
@@ -36,12 +32,9 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener  {
 		setFocusTraversalKeysEnabled(false);
 		timer = new Timer(delay, this);
 		timer.start();
-		
-		
-		
-	}
+		}
+
 	public void paint(Graphics g) {
-		
 		g.setColor(Color.white);
 		g.fillRect(1, 1, 692, 592);
 		
@@ -62,7 +55,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener  {
 		g.setFont(new Font("serif", Font.BOLD, 25));
 		g.drawString("" + score, 590, 30);
 		
-		
 		if (totalBricks <= 0) {
 			play = false;
 			ballXdir = 0;
@@ -73,7 +65,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener  {
 			
 			g.setFont(new Font("serif", Font.BOLD, 20));
 			g.drawString("Press Enter to Restart.", 230, 350);	
-			
 		}
 		
 		if(ballposY > 570) {
@@ -87,16 +78,12 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener  {
 			g.setFont(new Font("serif", Font.BOLD, 20));
 			g.drawString("Press Enter to Restart.", 230, 350);	
 		} 
-		
-		
-		
 		g.dispose();
-	
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+
 		timer.start();
 		if(play) {
 			// Ball - Pedal  interaction 
@@ -147,8 +134,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener  {
 			}
 			
 		}
-		
-		
 		repaint();
 
 	}
@@ -156,13 +141,11 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener  {
 
 	@Override
 	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	@Override
 	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
+
 		if(arg0.getKeyCode() == KeyEvent.VK_RIGHT) {
 			if(playerX >= 600) {
 				playerX = 600;
@@ -209,8 +192,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener  {
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 
 
